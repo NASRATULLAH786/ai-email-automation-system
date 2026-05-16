@@ -49,4 +49,8 @@ ai-email-automation-system/
 │
 ├── requirements.txt
 ├── README.md
+<<<<<<< HEAD
 └── .gitignore
+=======
+└── .gitignore
+>>>>>>> 11e992d (Resolve conflicts)
