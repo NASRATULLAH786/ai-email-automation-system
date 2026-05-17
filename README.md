@@ -1,118 +1,226 @@
-
----
-
-# 2. AI EMAIL AUTOMATION SYSTEM README
-
-```md
 # AI Email Automation System
+
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![SQLite](https://img.shields.io/badge/SQLite-Database-lightgrey)
+![AI Automation](https://img.shields.io/badge/AI-Workflow-orange)
+![Email Operations](https://img.shields.io/badge/Email-Automation-purple)
 
 ## Overview
 
-The AI Email Automation System is an intelligent workflow automation platform designed to automate email processing, classification, response generation, and workflow orchestration using AI-powered logic.
+AI Email Automation System is an AI-powered operational workflow platform designed to automate customer email analysis, categorization, priority assignment, and automated response generation.
 
-The project integrates LLM APIs, backend services, automation workflows, and database systems to improve operational efficiency and reduce repetitive manual communication tasks.
-
----
+The system demonstrates practical implementation of workflow automation for customer operations and support management using FastAPI, SQLite, and frontend dashboard workflows.
 
 ## Problem Statement
 
-Organizations often spend significant time managing repetitive emails, routing requests, and generating manual responses.
+Organizations receive large volumes of customer emails daily, including:
 
-This system solves those challenges through AI-powered automation and intelligent workflow management.
+- refund requests
+- billing complaints
+- urgent support issues
+- payment failures
+- authentication problems
 
----
+Manual handling of repetitive customer communication creates operational delays and increases support overhead.
 
 ## Solution
 
-The platform automatically processes incoming emails, categorizes requests, generates intelligent responses, and routes workflows through backend automation systems.
+This platform automates customer email workflows by:
 
----
+- analyzing customer email content
+- detecting operational intent
+- assigning workflow priority
+- generating automated responses
+- storing workflow history
+- enabling operational tracking
 
 ## Key Features
 
-- AI-powered email classification
-- Intelligent response generation
-- Workflow automation
-- REST API integration
-- Webhook support
-- Database logging
-- Automated email routing
-- Scalable backend architecture
-
----
+- AI-style email analysis
+- Intent detection workflows
+- Email categorization
+- Priority assignment
+- Automated response generation
+- Email workflow history
+- FastAPI backend APIs
+- Interactive frontend dashboard
+- Swagger API documentation
+- SQLite database integration
+- Operational workflow simulation
 
 ## Technologies Used
 
 - Python
-- OpenAI API
-- FastAPI / Flask
+- FastAPI
+- SQLAlchemy
+- SQLite
+- HTML
+- CSS
+- JavaScript
 - REST APIs
-- SMTP / Email APIs
-- PostgreSQL / MongoDB
-- JSON workflows
+- Uvicorn
 
----
+## System Workflow
 
-## Workflow
-
-1. Incoming email is received
-2. Email parser extracts content
-3. AI model classifies request
-4. Workflow engine determines action
-5. AI generates response
-6. Automated email reply is sent
-7. Activity is logged into database
-
----
+1. User submits customer email
+2. Backend analyzes email content
+3. Workflow engine detects intent
+4. Email category assigned
+5. Priority level calculated
+6. Automated reply generated
+7. Email workflow stored in database
+8. Operational history becomes available for review
 
 ## Architecture Diagram
 
-![Architecture](architecture/system-design.png)
+![Architecture Diagram](architecture/system-design.png)
 
-Incoming Email → Parser → AI Classification → Workflow Engine → Database → Automated Response
+```text
+Frontend Dashboard
+        ↓
+FastAPI Backend
+        ↓
+Email Workflow Engine
+        ↓
+SQLite Database
+        ↓
+Workflow Reporting UI
+```
 
----
+## API Endpoints
 
-## Technical Challenges
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Health check |
+| POST | `/analyze-email` | Analyze customer email |
+| GET | `/emails` | Load analyzed emails |
 
-- Managing email parsing workflows
-- Handling AI response reliability
-- Workflow orchestration logic
-- API failure handling
-- Database synchronization
+## Example Request
 
----
+```json
+{
+  "email_text": "Hello, I was charged twice for my subscription and need urgent help with a refund."
+}
+```
 
-## Future Improvements
+## Example Response
 
-- CRM integrations
-- Human approval workflows
-- Multi-agent orchestration
-- Analytics dashboard
-- Advanced routing systems
-
----
+```json
+{
+  "message": "Email analyzed and saved successfully",
+  "email": {
+    "id": 1,
+    "category": "Billing",
+    "priority": "High",
+    "suggested_reply": "We are reviewing your payment issue and will assist shortly.",
+    "status": "processed"
+  }
+}
+```
 
 ## Screenshots
 
+### Dashboard
+
 ![Dashboard](screenshots/dashboard.png)
 
-![Workflow](screenshots/workflow.png)
+### API Documentation
 
-![AI Output](screenshots/ai-output.png)
+![API Docs](screenshots/api-docs.png)
 
----
+### Email History
+
+![Email History](screenshots/email-history.png)
 
 ## Demo Video
 
-[Watch Demo](YOUR_DEMO_LINK)
-
----
+[Watch Demo Video](demo/ai-email-automation-demo.mp4)
 
 ## Installation
 
+Clone repository:
+
 ```bash
-git clone YOUR_REPOSITORY_LINK
+git clone https://github.com/NASRATULLAH786/ai-email-automation-system.git
 cd ai-email-automation-system
+```
+
+Create virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate virtual environment:
+
+```bash
+venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
-python app.py
+```
+
+Run backend:
+
+```bash
+uvicorn app.main:app --reload --port 8082
+```
+
+Open API documentation:
+
+```text
+http://127.0.0.1:8082/docs
+```
+
+Open frontend:
+
+```text
+frontend/index.html
+```
+
+## Environment Variables
+
+Create local `.env` file:
+
+```env
+GROQ_API_KEY=
+DATABASE_URL=sqlite:///./emails.db
+MODEL_NAME=llama3-70b-8192
+APP_ENV=development
+```
+
+## Technical Challenges
+
+- Email intent classification
+- Workflow response generation
+- Priority assignment logic
+- Frontend/backend synchronization
+- Operational workflow tracking
+- Database persistence
+- Error handling
+
+## Future Improvements
+
+- Real LLM integration
+- Gmail API integration
+- Multi-user support
+- Authentication system
+- Workflow analytics dashboard
+- Email sentiment analysis
+- Cloud deployment
+- Notification systems
+
+## Project Impact
+
+This project demonstrates practical AI automation engineering skills including:
+
+- backend API development
+- workflow automation
+- operational system design
+- frontend/backend integration
+- database-driven workflows
+- AI-style email processing systems
